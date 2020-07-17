@@ -51,3 +51,8 @@ kubectl describe nodes
 
 #### get detailed info about pods
 kubectl describe pods
+
+### Add a new node
+kubeadm token generate => <token_name>
+kubeadm token create <token_name> --ttl 23h --print-join-command
+- copy join command and execute in node
