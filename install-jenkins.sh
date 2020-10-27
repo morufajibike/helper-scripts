@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install -y openjdk-8-jre
+sudo apt install -y openjdk-8-jre default-jre openjdk-11-jre-headless openjdk-8-jre-headless
 
 wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 
