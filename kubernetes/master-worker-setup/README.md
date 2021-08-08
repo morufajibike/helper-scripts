@@ -3,11 +3,12 @@
 ### Set up
 Run these scripts in the following order for kubernetes master - worker setup
 
-- ./install_docker.sh (all)
 - ./configure_kubernetes.sh (all)
 - ./configure_networking.sh (all)
 - ./configure_master.sh (master only)
 - ./install_cni_on_master.sh (master only)
+- Copy kubeadm join command and execute on nodes for them to join the master.
+  - Remember to add sudo.
 
 ### End to end test
 

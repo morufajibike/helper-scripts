@@ -23,6 +23,7 @@ sudo apt-get update
 
 sudo apt-get install -y kubelet=1.17.8-00 kubeadm=1.17.8-00 kubectl=1.17.8-00
 
+# hold so they are not automatically updated
 sudo apt-mark hold kubelet kubeadm kubectl
 
 kubeadm version

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # On the Kube master node, initialize the cluster
+# with cidr used by flannel by default
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 
 #  set up the local kubeconfig
