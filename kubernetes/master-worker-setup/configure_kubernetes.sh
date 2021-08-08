@@ -9,7 +9,8 @@ sudo add-apt-repository \
 
 sudo apt-get update
 
-sudo apt-get install -y docker-ce=5:19.03.12~3-0~ubuntu-bionic
+sudo apt-get install -y docker-ce=18.06.1~ce~3-0~ubuntu
+#sudo apt-get install -y docker-ce=5:19.03.12~3-0~ubuntu-bionic
 
 sudo apt-mark hold docker-ce
 
