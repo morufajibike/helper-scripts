@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: store-products
-        image: linuxacademycontent/store-prodcuts:1.0.0
+        image: linuxacademycontent/store-products:1.0.0
         ports:
         - containerPort: 80
