@@ -1,19 +1,24 @@
 ## Overview
 
 ### Set up
-Run these scripts in the following order for kubernetes master - worker setup
+Run these scripts in the following order for kubernetes master - worker nodes setup
 
-- ./configure_kubernetes.sh (all)
-- ./configure_networking.sh (all)
-- ./configure_master.sh (master only)
-- ./install_cni_on_master.sh (master only)
-- Copy kubeadm join command and execute on nodes for them to join the master.
-  - Remember to add sudo.
+#### On master node, execute:
+- `./setup-master.sh`
+#### On worker node(s), execute on each of them:
+- `./setup-workers.sh`
+
+#### Join worker nodes to master:
+- Copy kubeadm join command from master node. It gets printed on the terminal after successful execution of the script above.
+- Execute on each of the worker nodes for them to join the master.
+- Remember to add sudo.
 
 ### End to end test
 
 #### kubetest => https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md
 
+#### Kubernetes Cheat Sheet
+```
 #### run a simple nginx deployment
 kubectl run nginx --image=nginx
 
@@ -57,3 +62,4 @@ kubectl describe pods
 kubeadm token generate => <token_name>
 kubeadm token create <token_name> --ttl 23h --print-join-command
 - copy join command and execute in node
+```
