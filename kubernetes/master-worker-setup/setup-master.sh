@@ -6,3 +6,4 @@
 ./scripts/configure-networking.sh
 ./scripts/configure-master.sh
 ./scripts/install-cni-on-master.sh
+./scripts/install-pkgs.sh
