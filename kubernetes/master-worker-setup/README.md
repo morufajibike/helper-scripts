@@ -9,7 +9,7 @@ Run these scripts in the following order for kubernetes master - worker nodes se
 - `./setup-workers.sh`
 
 #### Join worker nodes to master:
-- Copy kubeadm join command from master node. It gets printed on the terminal after successful execution of the script above.
+- Copy kubeadm join command from master node. It gets printed on the terminal after a successful execution of the script above.
 - Execute on each of the worker nodes for them to join the master.
 - Remember to add sudo.
 
