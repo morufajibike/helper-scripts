@@ -12,7 +12,7 @@ kubectl get nodes
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 
 # get the join command
-kubecadm token create --print-join-command
+kubeadm token create --print-join-command
 
 echo "IMPORTANT STEP!!!"
 echo "Copy the join command from the control plane node and run it with 'sudo' on each worker node."
