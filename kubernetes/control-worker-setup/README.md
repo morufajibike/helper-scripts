@@ -1,6 +1,7 @@
 ## Overview
 
 ## Prerequisites
+- The configuration scripts here have been used with `Ubuntu 20.04 Focal Fossa LTS` only.
 - Set hostnames on control and worker nodes to make it easier to know which node you are on
    - Control
       - `sudo hostnamectl set-hostname k8s-control`
