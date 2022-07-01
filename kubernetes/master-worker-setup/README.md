@@ -1,4 +1,3 @@
-## Overview
 
 ### Set up
 Run these scripts in the following order for kubernetes master - worker nodes setup
