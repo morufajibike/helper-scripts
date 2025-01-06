@@ -10,4 +10,4 @@ spec:
     image: busybox
     command: ['echo']
     args: ['This is my custom argument']
-  restartPolicy: Never
+  restartPolicy: Neve
