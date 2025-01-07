@@ -1,6 +1,13 @@
 # syntax=docker/dockerfile:1.4
 
-FROM --platform=$BUILDPLATFORM python:3.7-alpine AS builder
+# Specify the platform to ensure compatibility with Linux amd64
+FROM --platform=linux/amd64 python:3.7-alpine AS builder
+
+# Install necessary build dependencies
+RUN apk add --no-cache gcc musl-dev libffi-dev openssl-dev curl
+
+
+# FROM --platform=$BUILDPLATFORM python:3.7-alpine AS builder
 EXPOSE 8000
 WORKDIR /app 
 COPY requirements.txt /app
