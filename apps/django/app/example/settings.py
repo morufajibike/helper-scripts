@@ -34,8 +34,31 @@ SECRET_KEY = env('SECRET_KEY',
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', True)
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", (os.environ.get('POD_IP'), os.environ.get('HOST_IP'), "localhost", "127.0.0.1"))
+# ALLOWED_HOSTS = env.list(
+#     "ALLOWED_HOSTS",
+#     (
+#         os.environ.get('POD_IP'),
+#         os.environ.get('HOST_IP'),
+#         "localhost",
+#         "127.0.0.1",
+#         "kubernetes.docker.internal"
+#     )
+# )
+# Retrieve the list of host IP addresses, filtering out any 'None' values.
+def get_allowed_hosts(env):
+    pod_ip = os.environ.get('POD_IP')
+    host_ip = os.environ.get('HOST_IP')
 
+    # Filter out None values before passing to env.list
+    default_hosts = filter(None, (pod_ip, host_ip, "localhost", "127.0.0.1", "kubernetes.docker.internal"))
+
+    return env.list("ALLOWED_HOSTS", default_hosts)
+
+# Set ALLOWED_HOSTS using the helper function
+ALLOWED_HOSTS = get_allowed_hosts(env)
+
+# Optional: Add debug statements to confirm what ALLOWED_HOSTS contains
+# print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
 
 # Application definition
 
