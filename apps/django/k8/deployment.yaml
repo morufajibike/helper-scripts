@@ -17,16 +17,20 @@ spec:
     spec:
       containers:
         - name: django-container
-          imagePullPolicy: Always
-          image: 206334008930.dkr.ecr.eu-west-1.amazonaws.com/django-app:v2
+          imagePullPolicy: IfNotPresent
+          image: django-app:v1
+          # imagePullPolicy: Always
+          # image: 206334008930.dkr.ecr.eu-west-1.amazonaws.com/django-app:v2
           ports:
             - containerPort: 8000
           env:
-            # - name: ALLOWED_HOSTS
-            #   valueFrom:
-            #     configMapKeyRef:
-            #       name: django-config
-            #       key: DJANGO_ALLOWED_HOSTS
+          #   - name: LOCAL_DEV
+          #     value: 'true'
+          #   - name: ALLOWED_HOSTS
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: django-config
+          #         key: DJANGO_ALLOWED_HOSTS
             - name: POD_IP
               valueFrom:
                 fieldRef:
@@ -54,4 +58,4 @@ spec:
               port: 8000
             initialDelaySeconds: 5
             periodSeconds: 2
-      # restartPolicy: Never
+      restartPolicy: Always

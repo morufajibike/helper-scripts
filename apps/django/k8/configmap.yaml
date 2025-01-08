@@ -4,4 +4,4 @@
 #   name: django-config
 #   namespace: django
 # data:
-#   DJANGO_ALLOWED_HOSTS: "kubernetes.docker.internal, localhost, 127.0.0.1, 10.0.2.64"
+#   DJANGO_ALLOWED_HOSTS: "kubernetes.docker.internal, localhost, 127.0.0.1"
